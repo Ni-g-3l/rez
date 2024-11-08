@@ -132,7 +132,7 @@ class GitReleaseVCS(ReleaseVCS):
 
         # check if we are behind/ahead of remote
         if remote:
-            self.git("remote", "update")
+            self.git("remote", "update", remote)
             n = self.get_relative_to_remote()
             if n:
                 s = "ahead of" if n > 0 else "behind"
